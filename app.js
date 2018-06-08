@@ -1,6 +1,4 @@
-const express = require('express')
-const app = express()
-// const router = express.Router()
+const app = require('express')()
 const middleware = require('./utils/middleware')
 const routes = require('./routes/index')
 const bodyParser = require('body-parser')
