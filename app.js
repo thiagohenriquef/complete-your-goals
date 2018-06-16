@@ -6,10 +6,10 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-// 'Loading middleware...'
+// Loading middleware...
 app.use(middleware)
 
-//Loading Routes
+// Loading Routes
 app.use(routes)
 
 app.use('/', (req, res) => {

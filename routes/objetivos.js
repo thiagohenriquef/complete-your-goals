@@ -2,13 +2,13 @@ const db = require('../db')
 const router = require('express').Router()
 const errorCallback = err => res.status(500).send(err)
 
-router.get('/', function(req, res, next) {
+router.get('/', (req, res) => {
   db.query('select * from objetivos')
     .then(({ rows }) => res.status(200).json(rows))
     .catch(errorCallback)
 })
 
-router.get('/:id', function(req, res, next) {
+router.get('/:id', (req, res) => {
   const query = {
     text: 'select * from objetivos where id = $1',
     values: [parseInt(req.params.id)]
@@ -40,4 +40,4 @@ router.delete('/:id', (req, res) => {
     .catch(errorCallback)
 })
 
-module.exports = router;
+module.exports = router
